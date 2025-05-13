@@ -100,7 +100,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h1 class="text-xl font-semibold text-gray-800">{{ config('app.name', 'Laravel') }}</h1>
+                    {{-- <h1 class="text-xl font-semibold text-gray-800">{{ config('app.name', 'Laravel') }}</h1> --}}
                 </div>
                 <div class="card-body">
                     {{ $slot }}
