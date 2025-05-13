@@ -190,31 +190,33 @@ main{
 
     </style>
   <body class="body-b" >
-    <div class="container-c">
-      <h2>Contact Us</h2>
-      <form id="contact-form" method="POST" action="{{ route('contact.store') }}">
-        @csrf
-        <input type="text" id="name" placeholder="Name" name="name" required class="inp" />
-        <input type="text" id="phone" placeholder="070-000-000-0" name="phone" required class="inp" />
-        <input type="email" id="email" placeholder="Email" name="email" required class="inp" />
-        <textarea id="message" name="message" placeholder="Your message..." required style="resize: vertical; width: 100%; height: 150px"></textarea>
-        <button type="submit" class="bttn">Submit</button>
-      </form>
-      
-      @if(session('success'))
-        <p id="feedback" style="display: block; color: green">{{ session('success') }}</p>
-      @endif
-      
-      @if($errors->any())
-        <div class="error-message">
-          <ul>
-            @foreach($errors->all() as $error)
-              <li>{{ $error }}</li>
-            @endforeach
-          </ul>
-        </div>
-      @endif
-    </div>
+    <main>
+      <div class="container-c">
+        <h2>Contact Us</h2>
+        <form id="contact-form" method="POST" action="{{ route('contact') }}">
+          @csrf
+          <input type="text" id="name" placeholder="Name" name="name" required class="inp" value="{{ old('name') }}" />
+          <input type="text" id="phone" placeholder="070-000-000-0" name="phone" required class="inp" value="{{ old('phone') }}" />
+          <input type="email" id="email" placeholder="Email" name="email" required class="inp" value="{{ old('email') }}" />
+          <textarea id="message" name="message" placeholder="Your message..." required style="resize: vertical; width: 100%; height: 150px">{{ old('message') }}</textarea>
+          <button type="submit" class="bttn">Submit</button>
+        </form>
+        
+        @if(session('success'))
+          <p id="feedback" style="display: block; color: green">{{ session('success') }}</p>
+        @endif
+        
+        @if($errors->any())
+          <div class="error-message">
+            <ul>
+              @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+          </div>
+        @endif
+      </div>
+    </main>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
