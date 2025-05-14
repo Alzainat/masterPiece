@@ -13,7 +13,7 @@
                 <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                     {{ __('Home') }}
                 </x-nav-link>
-                <x-nav-link :href="route('hotels.index')" :active="request()->routeIs('hotels.index')">
+                <x-nav-link :href="route('admin.hotels.index')" :active="request()->routeIs('hotels.index')">
                     {{ __('Hotels') }}
                 </x-nav-link>
                 <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
