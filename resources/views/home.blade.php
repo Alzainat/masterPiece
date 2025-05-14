@@ -21,7 +21,7 @@
                     <div class="slide-content">
                         <h1 class="slide-title">Welcome to Our Platform</h1>
                         <p class="slide-description">Discover amazing features and services tailored just for you</p>
-                        <a href="{{ route('hotels.index') }}" class="slide-button">Get Started</a>
+                        <a href="{{ route('hotels_user.index') }}" class="slide-button">Get Started</a>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                     <div class="slide-content">
                         <h1 class="slide-title">Powerful Solutions</h1>
                         <p class="slide-description">Streamline your workflow with our innovative tools</p>
-                        <a href="{{ route('hotels.index') }}" class="slide-button">Get Started</a>
+                        <a href="{{ route('hotels_user.index') }}" class="slide-button">Get Started</a>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                     <div class="slide-content">
                         <h1 class="slide-title">Join Our Community</h1>
                         <p class="slide-description">Connect with thousands of users and grow together</p>
-                        <a href="{{ route('hotels.index') }}" class="slide-button">Get Started</a>
+                        <a href="{{ route('hotels_user.index') }}" class="slide-button">Get Started</a>
                     </div>
                 </div>
             </div>
@@ -567,7 +567,7 @@ h3.mb-3:before, h3.my-4:before {
                 
                 <div class="cta-container">
                     {{-- <a href="{{ route('about.us') }}" class="btn btn-outline-primary">Learn More About Us</a> --}}
-                    <a href="{{ route('hotels.index') }}" class="btn btn-primary">Hotels</a>
+                    <a href="{{ route('hotels_user.index') }}" class="btn btn-primary">Hotels</a>
                 </div>
             </div>
         </div>
@@ -1154,7 +1154,7 @@ h3.mb-3:before, h3.my-4:before {
             <h4>Ready to experience the difference?</h4>
             <p>Start your journey with us today and discover why thousands of travelers choose us year after year.</p>
             <div class="cta-buttons">
-                <a href="{{ route('hotels.index') }}" class="btn btn-primary">Hotels</a>
+                <a href="{{ route('hotels_user.index') }}" class="btn btn-primary">Hotels</a>
                 <a href="{{ route('contact') }}" class="btn btn-outline-primary">Contact Us</a>
             </div>
         </div>

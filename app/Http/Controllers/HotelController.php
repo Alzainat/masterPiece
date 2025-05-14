@@ -11,6 +11,7 @@ class HotelController extends Controller
     // Display all hotels with filters
     public function index(Request $request)
     {
+        // dd("test");
         $regions = Region::all();
         $query = Hotel::query()->with('region');
         
@@ -21,9 +22,9 @@ class HotelController extends Controller
             $maxPrice = $priceRange[1];
             $query->byPriceRange($minPrice, $maxPrice);
         }
-    // Filter by region
-    if ($request->has('region_id') && $request->region_id != '') {
-        $query->byRegion($request->region_id);
+        // Filter by region
+        if ($request->has('region_id') && $request->region_id != '') {
+            $query->byRegion($request->region_id);
     }
     
     // Filter by stars
