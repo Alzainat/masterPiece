@@ -38,7 +38,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/home', [FeaturedHotelsController::class, 'index'])->name('home');
 
 // Hotels Page
-Route::get('/hotels', [HotelController::class, 'index'])->name('hotels.index');
+Route::get('/hotels_view', [HotelController::class, 'index'])->name('hotels_user.index');
 Route::get('/hotels/{id}', [HotelController::class, 'show'])->name('hotels.show');
 
 Route::middleware(['auth'])->group(function () {

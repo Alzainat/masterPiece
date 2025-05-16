@@ -359,7 +359,7 @@ h3.mb-3:before, h3.my-4:before {
     <div class="header-section">
         <h1>Explore Hotels</h1>
         
-        <form action="{{ route('hotels.index') }}" method="GET" class="filters-inline">
+        <form action="{{ route('hotels_user.index') }}" method="GET" class="filters-inline">
             {{-- <div class="filter-item">
                 <label>Price Range</label>
                 <select name="price_range" class="form-select">

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 class AdminHotelsController extends Controller
 {
     public function index(Request $request) {
+        // dd("test");
 
         $hotels = Hotel::orderBy('created_at', 'desc')->paginate(7);
         $regions = Region::all();
