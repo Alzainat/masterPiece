@@ -12,8 +12,8 @@
                 <div class="bg-gradient-to-r from-green-600 to-green-500 p-8 text-white">
                     <div class="flex items-center justify-between">
                         <div>
-                            <h1 class="text-3xl font-bold">Reservation Confirmed!</h1>
-                            <p class="mt-2 text-green-100">Your booking has been successfully created.</p>
+                            <h1 class="text-3xl font-bold text-black">Reservation Confirmed!</h1>
+                            <p class="mt-2 text-black">Your booking has been successfully created.</p>
                         </div>
                         {{-- <div class="bg-white bg-opacity-20 rounded-full p-3">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">

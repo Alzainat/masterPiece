@@ -14,7 +14,7 @@
             <div class="md:flex">
                 <div class="md:w-1/2">
                     @if($hotel->image)
-                        <img src="{{ asset($hotel->image) }}" alt="{{ $hotel->name }}" class="w-full h-full object-cover max-h-96">
+                        <img src="{{ asset('storage/' . $hotel->image) }}" alt="{{ $hotel->name }}" class="w-full h-full object-cover max-h-96">
                     @else
                         <div class="w-full h-64 bg-gray-200 flex items-center justify-center">
                             <span class="text-gray-400">No image available</span>

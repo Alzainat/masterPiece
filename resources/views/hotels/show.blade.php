@@ -254,23 +254,16 @@
                                 @if($hotel->images->count() > 0)
                                     @foreach($hotel->images as $key => $image)
                                         <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                            <img src="{{ $image->image_path }}" class="d-block w-100" alt="{{ $hotel->name }}">
+                                            <img src="{{ asset('storage/' . $hotel->image) }}" class="card-img-top" alt="{{ $hotel->name }}" style="width: 100%">
                                         </div>
                                     @endforeach
                                 @else
                                     <div class="carousel-item active">
-                                        <img src="{{ $hotel->image_path }}" class="d-block w-100" alt="{{ $hotel->name }}">
+                                        <img src="{{ asset('storage/' . $hotel->image) }}" class="card-img-top" alt="{{ $hotel->name }}" style="width: 100%">
                                     </div>
                                 @endif
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#hotelCarousel" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#hotelCarousel" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
+                            
                         </div>
                     </div>
                 </div>

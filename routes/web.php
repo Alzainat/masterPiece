@@ -18,6 +18,7 @@ use App\Http\Controllers\FeaturedHotelsController;
 
 
 
+
 Route::get('/', [FeaturedHotelsController::class, 'index']
 )->name('home');
 
@@ -135,4 +136,6 @@ Route::middleware(['auth'])->group(function () {
 // Add this to your routes/web.php file
 use App\Http\Controllers\ContactController;
 
-Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact');

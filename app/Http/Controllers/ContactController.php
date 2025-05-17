@@ -2,13 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MessageForContact;
 use Illuminate\Http\Request;
+use App\Models\ContactMessage;
+use Illuminate\Support\Facades\Validator;
 
 class ContactController extends Controller
 {
     /**
-     * Store a new contact form submission.
+     * Display the contact form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('contact');
+    }
+
+    /**
+     * Store a newly created contact message in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -18,15 +29,15 @@ class ContactController extends Controller
         // Validate the request data
         $validated = $request->validate([
             'name' => 'required|string|max:255',
+            'phone' => 'required|string|regex:/^\+?\d{10,15}$/',
             'email' => 'required|email|max:255',
-            'phone' => 'required|string|max:20',
             'message' => 'required|string',
         ]);
         
-        // Save to database
-        MessageForContact::create($validated);
+        // Create new contact message
+        ContactMessage::create($validated);
         
         // Redirect back with success message
-        return back()->with('success', 'Your message has been sent successfully!');
+        return redirect()->back()->with('success', 'Your message has been sent successfully!');
     }
 }

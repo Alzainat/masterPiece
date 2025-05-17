@@ -1,214 +1,41 @@
-<x-app-layout>
-  <style>
-     
-.body-b {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f3f4f6;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  background-image: linear-gradient(135deg, #b1c9f2, #f3f4f6);
-}
-
-.container-c {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  padding: 25px;
-  width: 85%;
-  max-width: 450px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.container-c:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-
-/* Heading styles */
-h2 {
-  color: #3a6f8f;
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 26px;
-  position: relative;
-  font-weight: 500;
-}
-
-h2:after {
-  content: '';
-  position: absolute;
-  width: 50px;
-  height: 2px;
-  background-color: #76b3c4;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: width 0.3s ease;
-}
-
-.container-c:hover h2:after {
-  width: 80px;
-}
-
-/* Form elements styling */
-#contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.inp, textarea {
-  padding: 12px;
-  border: 1px solid #dfe4e8;
-  border-radius: 6px;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  outline: none;
-  background-color: #fafafa;
-}
-
-.inp:focus, textarea:focus {
-  border-color: #76b3c4;
-  box-shadow: 0 0 0 2px rgba(118, 179, 196, 0.2);
-  background-color: white;
-}
-
-/* Button styling */
-.bttn {
-  background-color: #3a6f8f;
-  color: white;
-  border: none;
-  padding: 12px;
-  font-size: 15px;
-  font-weight: 500;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  letter-spacing: 0.5px;
-  margin-top: 5px;
-}
-
-.bttn:hover {
-  background-color: #2d5e72;
-  transform: translateY(-2px);
-  box-shadow: 0 3px 10px rgba(58, 111, 143, 0.2);
-}
-
-.bttn:active {
-  transform: translateY(0);
-}
-
-/* Feedback message styling */
-#feedback, #loading {
-  text-align: center;
-  margin-top: 12px;
-  font-weight: 500;
-  font-size: 14px;
-}
-
-#feedback {
-  color: #5cb85c;
-}
-
-#loading {
-  color: #3a6f8f;
-}
-
-/* Error message styling */
-.error-message {
-  color: #f44336;
-  font-size: 13px;
-  margin-top: 5px;
-  text-align: center;
-}
-
-/* Animation for input fields - softer */
-@keyframes gentlePulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.01); }
-  100% { transform: scale(1); }
-}
-
-.inp:focus, textarea:focus {
-  animation: gentlePulse 1.5s infinite;
-  border-color: #76b3c4;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .container-c {
-    width: 90%;
-    padding: 20px;
-  }
-  
-  h2 {
-    font-size: 22px;
-  }
-  
-  .inp, textarea, .bttn {
-    padding: 10px;
-    font-size: 14px;
-  }
-}
-
-/* Hotel booking specific elements - softer color scheme */
-::placeholder {
-  color: #c1c9d5;
-  opacity: 0.8;
-}
-
-.inp:hover, textarea:hover {
-  border-color: #c1c9d5;
-  background-color: rgba(193, 201, 213, 0.05);
-}
-
-/* Success animation - softer */
-@keyframes gentleSuccessPulse {
-  0% { background-color: #5cb85c; }
-  50% { background-color: #4cae4c; }
-  100% { background-color: #5cb85c; }
-}
-
-#feedback {
-  padding: 8px;
-  border-radius: 4px;
-  animation: gentleSuccessPulse 3s infinite;
-}
-
-/* Textarea specific */
-textarea {
-  height: 120px;
-}
-
-main{
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  margin: 3vh;
-}
-
-    </style>
-  <body class="body-b" >
-    <main>
-      <div class="container-c">
-        <h2>Contact Us</h2>
-        <form id="contact-form" method="POST" action="{{ route('contact') }}">
+<x-app-layout>  
+  <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; margin: 0; padding: 0; min-height: 100vh; background-image: linear-gradient(135deg, #b1c9f2, #f3f4f6);">
+    <main style="display: flex; justify-content: center; align-items: center; padding: 3rem 1rem; min-height: calc(100vh - 150px);">
+      <div style="background-color: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); padding: 25px; width: 100%; max-width: 450px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+        <h2 style="color: #3a6f8f; text-align: center; margin-bottom: 30px; font-size: 26px; position: relative; font-weight: 500;">
+          Contact Us
+          <span style="content: ''; position: absolute; width: 50px; height: 2px; background-color: #76b3c4; bottom: -8px; left: 50%; transform: translateX(-50%);"></span>
+        </h2>
+        
+        <form id="contact-form" method="POST" action="{{ route('contact') }}" style="display: flex; flex-direction: column; gap: 15px;">
           @csrf
-          <input type="text" id="name" placeholder="Name" name="name" required class="inp" value="{{ old('name') }}" />
-          <input type="text" id="phone" placeholder="070-000-000-0" name="phone" required class="inp" value="{{ old('phone') }}" />
-          <input type="email" id="email" placeholder="Email" name="email" required class="inp" value="{{ old('email') }}" />
-          <textarea id="message" name="message" placeholder="Your message..." required style="resize: vertical; width: 100%; height: 150px">{{ old('message') }}</textarea>
-          <button type="submit" class="bttn">Submit</button>
+          <input type="text" id="name" placeholder="Name" name="name" required value="{{ old('name') }}" 
+                 style="padding: 12px; border: 1px solid #dfe4e8; border-radius: 6px; font-size: 14px; transition: all 0.3s ease; outline: none; background-color: #fafafa; width: 100%;" />
+          
+          <input type="text" id="phone" placeholder="070-000-000-0" name="phone" required value="{{ old('phone') }}" 
+                 style="padding: 12px; border: 1px solid #dfe4e8; border-radius: 6px; font-size: 14px; transition: all 0.3s ease; outline: none; background-color: #fafafa; width: 100%;" />
+          
+          <input type="email" id="email" placeholder="Email" name="email" required value="{{ old('email') }}" 
+                 style="padding: 12px; border: 1px solid #dfe4e8; border-radius: 6px; font-size: 14px; transition: all 0.3s ease; outline: none; background-color: #fafafa; width: 100%;" />
+          
+          <textarea id="message" name="message" placeholder="Your message..." required 
+                    style="padding: 12px; border: 1px solid #dfe4e8; border-radius: 6px; font-size: 14px; transition: all 0.3s ease; outline: none; background-color: #fafafa; width: 100%; height: 120px; resize: vertical;">{{ old('message') }}</textarea>
+          
+          <button type="submit" 
+                  style="background-color: #3a6f8f; color: white; border: none; padding: 12px; font-size: 15px; font-weight: 500; border-radius: 6px; cursor: pointer; transition: all 0.3s ease; letter-spacing: 0.5px; margin-top: 5px; width: 100%;">
+            Submit
+          </button>
         </form>
         
         @if(session('success'))
-          <p id="feedback" style="display: block; color: green">{{ session('success') }}</p>
+          <p id="feedback" style="display: block; color: green; text-align: center; margin-top: 12px; font-weight: 500; font-size: 14px; padding: 8px; border-radius: 4px;">
+            {{ session('success') }}
+          </p>
         @endif
         
         @if($errors->any())
-          <div class="error-message">
-            <ul>
+          <div style="color: #f44336; font-size: 13px; margin-top: 10px; text-align: center;">
+            <ul style="list-style-type: none; padding: 0;">
               @foreach($errors->all() as $error)
                 <li>{{ $error }}</li>
               @endforeach
@@ -221,6 +48,57 @@ main{
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function() {
+        // Add hover effect to container
+        $(".container-c").hover(
+          function() {
+            $(this).css({
+              "transform": "translateY(-3px)",
+              "box-shadow": "0 5px 15px rgba(0, 0, 0, 0.15)"
+            });
+            $(this).find("h2 span").css("width", "80px");
+          },
+          function() {
+            $(this).css({
+              "transform": "translateY(0)",
+              "box-shadow": "0 3px 10px rgba(0, 0, 0, 0.1)"
+            });
+            $(this).find("h2 span").css("width", "50px");
+          }
+        );
+        
+        // Add focus effects to inputs
+        $("input, textarea").focus(function() {
+          $(this).css({
+            "border-color": "#76b3c4",
+            "box-shadow": "0 0 0 2px rgba(118, 179, 196, 0.2)",
+            "background-color": "white"
+          });
+        }).blur(function() {
+          $(this).css({
+            "border-color": "#dfe4e8",
+            "box-shadow": "none",
+            "background-color": "#fafafa"
+          });
+        });
+        
+        // Add hover and active states to button
+        $(".bttn").hover(
+          function() {
+            $(this).css({
+              "background-color": "#2d5e72",
+              "transform": "translateY(-2px)",
+              "box-shadow": "0 3px 10px rgba(58, 111, 143, 0.2)"
+            });
+          },
+          function() {
+            $(this).css({
+              "background-color": "#3a6f8f",
+              "transform": "translateY(0)",
+              "box-shadow": "none"
+            });
+          }
+        );
+        
         // Client-side validation
         $("#contact-form").submit(function() {
           $(".error-message").remove();
@@ -271,8 +149,8 @@ main{
         }
 
         function showError(message) {
-          let errorSpan = $('<span class="error-message" style="color: red;"></span>').text(message);
-          $("#contact-form").append(errorSpan);
+          let errorSpan = $('<div style="color: #f44336; font-size: 13px; margin-top: 10px; text-align: center;"></div>').html('<ul style="list-style-type: none; padding: 0;"><li>' + message + '</li></ul>');
+          $("#contact-form").after(errorSpan);
         }
       });
     </script>
